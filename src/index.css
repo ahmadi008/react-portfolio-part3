@@ -1,0 +1,127 @@
+/* ── Google Fonts are loaded via index.html <link> tag ── */
+
+/* ── Design Tokens: Light Theme ── */
+:root {
+  --font-heading: 'Caveat', cursive;
+  --font-body: 'Quicksand', sans-serif;
+  --color-primary:    #2563EB;
+  --color-secondary:  #3B82F6;
+  --color-accent:     #F97316;
+  --color-bg:         #F8FAFC;
+  --color-bg-alt:     #EFF6FF;
+  --color-surface:    #FFFFFF;
+  --color-text:       #1E293B;
+  --color-text-muted: #64748B;
+  --color-border:     #E2E8F0;
+  --color-success:    #10B981;
+  --color-error:      #EF4444;
+  --shadow-sm: 0 1px 3px rgba(37,99,235,0.08);
+  --shadow-md: 0 4px 16px rgba(37,99,235,0.12);
+  --shadow-lg: 0 8px 40px rgba(37,99,235,0.18);
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+/* ── Dark Theme ── */
+[data-theme="dark"] {
+  --color-primary:    #3B82F6;
+  --color-secondary:  #60A5FA;
+  --color-accent:     #FB923C;
+  --color-bg:         #0F172A;
+  --color-bg-alt:     #1E293B;
+  --color-surface:    #1E293B;
+  --color-text:       #F1F5F9;
+  --color-text-muted: #94A3B8;
+  --color-border:     #334155;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+/* ── Sunset Theme ── */
+[data-theme="sunset"] {
+  --color-primary:    #EA580C;
+  --color-secondary:  #F97316;
+  --color-accent:     #F43F5E;
+  --color-bg:         #FFF7ED;
+  --color-bg-alt:     #FEF3C7;
+  --color-surface:    #FFFBF5;
+  --color-text:       #1C1917;
+  --color-text-muted: #78716C;
+  --color-border:     #FECDD3;
+  --shadow-sm: 0 1px 3px rgba(234,88,12,0.1);
+  --shadow-md: 0 4px 16px rgba(234,88,12,0.15);
+  --shadow-lg: 0 8px 40px rgba(244,63,94,0.2);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.2; }
+
+/* Scroll Progress Bar */
+#scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  z-index: 9999; transition: width 0.1s linear;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes blink   { 50% { border-color: transparent; } }
+@keyframes pulse   { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+@keyframes bounceIn {
+  0%  { transform:scale(0.3); opacity:0; }
+  50% { transform:scale(1.1); opacity:0.9; }
+  80% { transform:scale(0.9); }
+  100%{ transform:scale(1);   opacity:1; }
+}
+@keyframes toastSlide {
+  from { transform: translateX(110%); opacity:0; }
+  to   { transform: translateX(0);    opacity:1; }
+}
+@keyframes confettiFall {
+  0%   { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+@keyframes starPop {
+  0%  { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100%{ transform: scale(1); }
+}
+@keyframes scaleIn {
+  from { opacity:0; transform:scale(0.9); }
+  to   { opacity:1; transform:scale(1); }
+}
+
+/* Scroll Reveal */
+.reveal { opacity:0; transform:translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.reveal-left { opacity:0; transform:translateX(-28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal-left.visible { opacity:1; transform:translateX(0); }
+.reveal-right { opacity:0; transform:translateX(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal-right.visible { opacity:1; transform:translateX(0); }
+
+/* Mesh Background */
+.mesh-bg {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 20%, color-mix(in srgb, var(--color-primary) 8%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, color-mix(in srgb, var(--color-accent) 8%, transparent) 0%, transparent 60%);
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+  .reveal, .reveal-left, .reveal-right { opacity:1 !important; transform:none !important; }
+}
