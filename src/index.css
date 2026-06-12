@@ -125,3 +125,18 @@ h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.2; }
   *, *::before, *::after { animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
   .reveal, .reveal-left, .reveal-right { opacity:1 !important; transform:none !important; }
 }
+/* ── Responsive Grid Breakpoints ── */
+@media (max-width: 768px) {
+  .featured-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .goals-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .desktop-nav {
+    display: none !important;
+  }
+}
