@@ -1,4 +1,3 @@
-// Reusable component — receives one prop: tech (a string)
 export default function TechBadge({ tech }) {
   return (
     <span style={{
@@ -8,8 +7,8 @@ export default function TechBadge({ tech }) {
       fontWeight: 500,
       letterSpacing: '0.05em',
       textTransform: 'uppercase',
-      color: 'var(--accent-orange)',
-      backgroundColor: 'var(--accent-orange-muted)',
+      color: 'var(--color-accent)',
+      backgroundColor: 'rgba(249,115,22,0.1)',
       border: '1px solid rgba(249, 115, 22, 0.25)',
       borderRadius: '4px',
       whiteSpace: 'nowrap',
