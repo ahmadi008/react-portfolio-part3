@@ -3,7 +3,6 @@ import Navbar from './components/Navbar'
 import { ThemeProvider } from './components/ThemeProvider'
 import { AppProvider } from './context/AppContext'
 
-// Direct imports (no lazy loading for now)
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ProjectsPage from './pages/ProjectsPage'
@@ -15,7 +14,7 @@ function Layout({ children }) {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
-      <main style={{ flex: 1, marginTop: 64 }}>
+      <main id="main-content" style={{ flex: 1, marginTop: 64 }}>
         {children}
       </main>
     </div>
