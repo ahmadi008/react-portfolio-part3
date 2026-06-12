@@ -4,7 +4,7 @@ import { ThemeProvider } from './components/ThemeProvider'
 import { AppProvider } from './context/AppContext'
 import ScrollProgress from './components/ScrollProgress'
 import Navbar from './components/Navbar'
-import './App.css'
+
 
 // Lazy-load pages
 const HomePage = lazy(() => import('./pages/HomePage'))
