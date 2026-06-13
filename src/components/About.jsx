@@ -91,9 +91,8 @@ export default function About() {
                 Goals &amp; Journey
               </h3>
               <p style={{ fontFamily:'var(--font-body)', fontSize:15, color:'var(--color-text-muted)', lineHeight:1.8 }}>
-                I'm a frontend developer studying at Kabul University and CodeWeekend bootcamp.
-                I built a Joomla CMS project and I'm passionate about AI and modern web technologies.
-                My goal is to create beautiful, accessible, and meaningful digital experiences.
+              Frontend developer passionate about building intuitive, accessible, and user-centered web experiences. 
+                 With a strong interest in AI and emerging technologies, I am committed to continuous learning and creating digital solutions that blend functionality, creativity, and meaningful impact.
               </p>
             </div>
             <h3 style={{ fontFamily:'var(--font-heading)', fontSize:26, color:'var(--color-text)', marginBottom:16 }}>
